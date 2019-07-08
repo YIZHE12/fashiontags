@@ -10,7 +10,7 @@ To get the data, please go to the 'Data' folder in this repo for further instruc
 All scripts should be ran from the project root directory, e.g.:
 
 ```
-python scripts/training.py
+python scripts/train.py
 ```
 ### Prerequisites
 
@@ -47,7 +47,9 @@ python scripts/create_embedding.py
 ### Train the second half of the model using multiple customerized loss function
 
 Traditionally, a multilabel classification problem will use binary cross-entropy as the cost function. However, due to the sparcity of our target data, in other words, most columns in y are 0. The model can just output all zero to get a high accuracy. This makes it very difficult to train. To solve this problem, instead of focusing on the accurcay, I focus on pushing the F1 score of the model, which is a complimize between recall and precision. Therefore, I customerized a loss function based on the F1 score to train the model. Another difficulty of this project is that our data is highly imbalanced even after label selection. Focal loss [https://arxiv.org/abs/1708.02002], is a method developed in the object detection task. In object detection, often, there are a large background, which is easy to identify but occupy most of the data. The model saturated easily in very accuracily predicting a background. However, what we really interested is the a few obejct, which is our positive examples. Focal loss was designed to force the model focus on the few positive examples (outputting 1, not 0). This is similar to our imbalanced class and sparse target data problems. Therefore, I also customerized a focal loss function as our loss function in this project to increase the F1 score.
+
 ```
+python scripts/train.py
 ```
 
 ## Deployment
