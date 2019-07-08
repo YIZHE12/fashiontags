@@ -54,16 +54,16 @@ python scripts/train.py
 
 ## Deployment
 
-I have Flask to deploy the deep learning model to a web application. For more information, please visit [my github page](https://github.com/YIZHE12/keras-flask-deploy-webapp).
+I have Flask to deploy the deep learning model to a web application. For more information, please visit [my github page of Flask and Docker](https://github.com/YIZHE12/keras-flask-deploy-webapp).
 
 ## Built With
 
 * [Flask](http://flask.pocoo.org/) - The web framework used
 
 
-## Authors
+## Contact information
 
-* **Yi Zheng** - *echeng1212@gmail.comk* - 
+* **Yi Zheng** - echeng1212@gmail.com - 
 
 
 ## Acknowledgments
