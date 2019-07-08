@@ -14,7 +14,11 @@ python scripts/delete_broken_images.py
 # download image data using the url given in the training.json file
 python scripts/download_images.py ./data/train.json ./data/validation
 ```
+All scripts should be ran from the project root directory, e.g.:
 
+```
+python scripts/training.py
+```
 ### Prerequisites
 
 I used tensorflow and keras for the model development on AWS enviroment tensorflow_p36. To install a similar enviroment, you can run pip to install the following packages. For the Flask development, you can use the docker file to setup the enviroment.
