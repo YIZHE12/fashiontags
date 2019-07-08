@@ -30,7 +30,7 @@ The code should be execute in the correct sequence.
 
 ### Download and clean the data
 
-To download the data, you should first download the json file of the [training.json file]:https://www.kaggle.com/c/imaterialist-challenge-fashion-2018, then run the following code to (1) remove broken links from the json files; (2) download the images using the url links from the json file; (3) create label data
+To download the data, you should first download the json file of the [training.json file]:(https://www.kaggle.com/c/imaterialist-challenge-fashion-2018), then run the following code to (1) remove broken links from the json files; (2) download the images using the url links from the json file; (3) create label data
 
 ```
 python delete_broken_images.py
