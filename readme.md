@@ -63,12 +63,14 @@ I have Flask to deploy the deep learning model to a web application. For more in
 
 ## Contact information
 
-* **Yi Zheng** - echeng1212@gmail.com - 
+* **Yi Zheng** :echeng1212@gmail.com 
 
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Inspiration: 
+https://github.com/KDercksen/hunter2_fashion
+https://github.com/mtobeiyf/keras-flask-deploy-webapp
+
+
 
