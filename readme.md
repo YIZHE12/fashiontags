@@ -67,7 +67,7 @@ Another difficulty of this project is that our data is highly imbalanced even af
 
 Focal loss [https://arxiv.org/abs/1708.02002], is a method developed in the object detection task. In object detection, often, there are a large background, which is easy to identify but occupy most of the data. The model saturated easily in very accuracily predicting a background. However, what we really interested is the a few obejct, which is our positive examples. Focal loss was designed to force the model focus on the few positive examples (outputting 1, not 0). This is similar to our imbalanced class and sparse target data problems. Therefore, I also customerized a focal loss function as our loss function in this project to increase the F1 score.
 
-<img src='images/f1_score_opt.jpg'>
+<img src='images/f1_score_v3.jpg'>
 
 To start the training, run the following command lines, which also use tensorboard to monitor the training process. The learning rate can be changed when fine-tuning the selected model.
 
