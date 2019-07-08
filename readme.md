@@ -14,7 +14,7 @@ python scripts/training.py
 ```
 ### Prerequisites
 
-I used tensorflow and keras for the model development on AWS enviroment tensorflow_p36. To install a similar enviroment, you can run pip to install the following packages. For the Flask development, you can use the docker file to setup the enviroment.
+I used tensorflow and keras for the model development on AWS enviroment tensorflow_p36. To install a similar enviroment, you can run pip to install the following packages. I also installed keras-metrics, a package to use customerized metrics to monitor the training process. For the Flask development, you can use the docker file to setup the enviroment.
 
 ```
 pip install tensorflow==1.13.1
