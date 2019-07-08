@@ -21,7 +21,7 @@ pip install tensorflow==1.13.1
 pip install Keras==2.2.4
 pip install Keras-Applications==1.0.7
 pip install keras-metrics==1.1.0
-pip install Keras-Preprocessing==1.0.9```
+pip install Keras-Preprocessing==1.0.9
 ```
 
 ## Running the tests
