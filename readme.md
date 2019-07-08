@@ -28,12 +28,14 @@ pip install Keras-Preprocessing==1.0.9
 
 The code should be execute in the correct sequence. 
 
-### Download data
+### Download and clean the data
 
-Explain what these tests test and why
+To download the data, you should first download the json file of the [training data]: https://www.kaggle.com/c/imaterialist-challenge-fashion-2018, then run the following code to (1) remove broken links from the json files; (2) download the images using the url links from the json file; (3) create label data
 
 ```
-Give an example
+python delete_broken_images.py
+python scripts/download_images.py ./data/train.json ./data/train
+python scripts/create_label.py
 ```
 
 ### Create image embedding data using the first half of the model
