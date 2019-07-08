@@ -1,7 +1,7 @@
 # Download and clean the data
 To download the json file containing the url of the image data, please go to https://www.kaggle.com/c/imaterialist-challenge-fashion-2018/data.
 
-After you finished downloading the training.json file, you can run the 'delete_broken_images.py' to remove the broken images listed in the 'missing.json'. Then by running the 'download_images.py' you can download more than 1 million fashion images with tags to your local computer. Here, I put all data in the validation folder as I don't have seperated validation data. The validation data is taken from the training set.
+After you finished downloading the training.json file, you can run the 'delete_broken_images.py' to remove the broken images listed in the 'missing.json'. Then by running the 'download_images.py' you can download more than 1 million fashion images with tags to your local computer. Here, I put all data in the validation folder as I don't have seperated validation data. The validation data is taken from the training set. The csv file contains the label names of the files. The raw json file doesn't contain the correct label name but instead only with labelID.
 
 ```
 python delete_broken_images.py
