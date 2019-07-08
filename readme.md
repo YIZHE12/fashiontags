@@ -1,40 +1,27 @@
-# Project Title
+# Fashiontag
 
-One Paragraph of project description goes here
+This is a consulting project to develop a web application to automatically creating fashion tags for images uploaded. The training data is 1 million labelled fashion images from a CVPR 2018 workshop. I used transfer learning to create embedding data of the fashion images to achieve more than 100 times accerlation in the deep neural network training process. Flask was used to develop the web application. The final product is dockerized and can be pull from docker hub. 
+
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This json file containes the urls of the image files and the corresponding labels. To download the data, you can run xx.py with multithred processing. However, some of the images are broken. To remove the broken images from the json list, you can run xx.py first. To train your own model, please run xx.py. After a model is build, you can run xx.py and open the xx link to test the Flask app on your local computer. To dockerize your model, please go to XX and follow the instruction from there. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+I used tensorflow and keras for the model development on AWS enviroment tensorflow_p36. To install a similar enviroment, you can run pip to install the following packages. For the Flask development, you can use the docker file to setup the enviroment.
 
 ```
-Give examples
+pip install tensorflow==1.13.1
+pip install Keras==2.2.4
+pip install Keras-Applications==1.0.7
+pip install keras-metrics==1.1.0
+pip install Keras-Preprocessing==1.0.9```
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+The code should be execute in the correct sequence. 
 
 ### Break down into end to end tests
 
