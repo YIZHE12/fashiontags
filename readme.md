@@ -54,7 +54,13 @@ python scripts/train.py
 
 ## Deployment
 
-I have Flask to deploy the deep learning model to a web application. For more information, please visit [my github page of Flask and Docker](https://github.com/YIZHE12/keras-flask-deploy-webapp).
+I have Flask to deploy the deep learning model to a web application. For more information, please visit [my github page of Flask and Docker](https://github.com/YIZHE12/keras-flask-deploy-webapp). To download and run the docker, you can run the following commands:
+
+```
+docker pull echeng1212/keras_flask_app:insightdemo
+docker run -d -p 5000:5000 echeng1212/keras_flask_app:insightdemo
+```
+
 
 ## Built With
 
@@ -70,7 +76,7 @@ I have Flask to deploy the deep learning model to a web application. For more in
 
 * Inspiration: 
 https://github.com/KDercksen/hunter2_fashion
-https://github.com/mtobeiyf/keras-flask-deploy-webapp
+
 
 
 
