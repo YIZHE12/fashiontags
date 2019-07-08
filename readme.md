@@ -63,7 +63,7 @@ Precision = TP/TP+FP
 
 Another difficulty of this project is that our data is highly imbalanced even after label selection. 
 
-<img src='images/label_dist.png'>
+<img src='images/label_dist.jpg'>
 
 Focal loss [https://arxiv.org/abs/1708.02002], is a method developed in the object detection task. In object detection, often, there are a large background, which is easy to identify but occupy most of the data. The model saturated easily in very accuracily predicting a background. However, what we really interested is the a few obejct, which is our positive examples. Focal loss was designed to force the model focus on the few positive examples (outputting 1, not 0). This is similar to our imbalanced class and sparse target data problems. Therefore, I also customerized a focal loss function as our loss function in this project to increase the F1 score.
 
