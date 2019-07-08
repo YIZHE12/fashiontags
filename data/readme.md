@@ -6,4 +6,5 @@ After you finished downloading the training.json file, you can run the 'delete_b
 ```
 python delete_broken_images.py
 python scripts/download_images.py ./data/train.json ./data/train
+python scripts/create_label.py
 ```
