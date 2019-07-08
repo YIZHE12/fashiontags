@@ -5,7 +5,15 @@ This is a consulting project to develop a web application to automatically creat
 
 ## Getting Started
 
-This json file containes the urls of the image files and the corresponding labels. To download the data, you can run xx.py with multithred processing. However, some of the images are broken. To remove the broken images from the json list, you can run xx.py first. To train your own model, please run xx.py. After a model is build, you can run xx.py and open the xx link to test the Flask app on your local computer. To dockerize your model, please go to XX and follow the instruction from there. 
+To get the data, please go to the 'Data' folder in this repo for further instructions. To train your own model, you will first need to generate embedding data for the images and store the embedding in your data folder. This will acceccrate your deep neural network training process by trading time complexcity with space complexicity. 
+
+```
+# remove broken images' url from the training.json file
+python scripts/delete_broken_images.py
+
+# download image data using the url given in the training.json file
+python scripts/download_images.py ./data/train.json ./data/validation
+```
 
 ### Prerequisites
 
