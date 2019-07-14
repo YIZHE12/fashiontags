@@ -86,11 +86,67 @@ I have Flask to deploy the deep learning model to a web application. For more in
 docker pull echeng1212/keras_flask_app:insightdemo
 docker run -d -p 5000:5000 echeng1212/keras_flask_app:insightdemo
 ```
+To deploy the containerized web application on google cloud, you should first register a google cloud account, which will give you $300 credit. Open the console, and create an instance with adequate storage. Without creating your own instance, but run the docker container on the default console will get an out of memory error. Then you can run the following code to build the docker on the cloud, note to set the [PROJECT_ID] in your project ID and your zone to your local zone.
 
+```
+gcloud config set project [PROJECT_ID]
+gcloud config set compute/zone us-east-4a
+
+git clone https://github.com/YIZHE12/keras-flask-deploy-webapp
+cd keras-flask-deploy-webapp
+
+export PROJECT_ID="$(gcloud config get-value project -q)"
+docker build -t gcr.io/${PROJECT_ID}keras-flask-deploy-webapp:v1 .
+gcloud auth configure-docker
+docker push gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1
+
+```
+You should then check if the docker is running properly by running it locally on the google cloud VM:
+```
+docker run --rm -p 5000:5000 gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1
+```
+Give it a few minutes, when it is ready, you should get a response by running:
+```
+curl http://localhost:5000
+```
+After you are sure that it is running, kill the program by using CTRL+C. Now we can start creating the cluster for the web app by:
+```
+gcloud container clusters create hello-cluster --num-nodes=2
+```
+
+Wait for a few minutes, use Kubernetes to create a Deployment named hello-web on your cluster. 
+```
+kubectl run hello-web --image=gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1 --port 5000
+```
+
+Run the following command to check if the deployment is ready, when it is ready, you should see Ready 1/1
+```
+kubectl get pods
+```
+Now push it to the Internet:
+```
+kubectl expose deployment hello-web --type=LoadBalancer --port 80 --target-port 5000
+```
+Run the following command and check every minute until the eternal IP is avaiable:
+```
+kubectl get service
+```
+Now you can use http://[external ip] to test your web app on the internet
+
+To kill the cluster and service, run
+```
+kubectl delete service hello-web
+gcloud container clusters delete hello-cluster
+```
+
+For more information, see:
+https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 
 ## Built With
 
 * [Flask](http://flask.pocoo.org/) - The web framework used
+* [Dokcer](https://www.docker.com/) - The container platform
+* [Kubernetes](https://kubernetes.io) - The container deployment tool
 
 
 ## Contact information
