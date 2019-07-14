@@ -2,13 +2,13 @@
 
 This is a consulting project to develop a web application to automatically creating fashion tags for images uploaded. The training data is 1 million labelled fashion images from a CVPR 2018 workshop. I used transfer learning to create embedding data of the fashion images to achieve more than 100 times accerlation in the deep neural network training process. Flask was used to develop the web application. The final product is dockerized and can be pull from docker hub. Eventually, I deploy the docker container on google cloud using kubernetes.
 
-<img src ='images/ezgif.com-crop.gif' height = 100>
+<img src ='images/ezgif.com-crop.gif'>
 
 ## Getting Started
 
 To get the data, please go to the 'Data' folder in this repo for further instructions. To train your own model, you will first need to generate embedding data for the images and store the embedding in your data folder. This will acceccrate your deep neural network training process by trading time complexcity with space complexicity. 
 
-<img src ='images/nn_new.png'>
+<img src ='images/nn_new.png' height = 150>
 
 All scripts should be ran from the project root directory, e.g.:
 
