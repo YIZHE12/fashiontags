@@ -8,6 +8,10 @@ This is a consulting project to develop a web application to automatically creat
 
 To get the data, please go to the 'Data' folder in this repo for further instructions. To train your own model, you will first need to generate embedding data for the images and store the embedding in your data folder. This will acceccrate your deep neural network training process by trading time complexcity with space complexicity. 
 
+
+<img src ='images/nn.png'>
+
+
 All scripts should be ran from the project root directory, e.g.:
 
 ```
