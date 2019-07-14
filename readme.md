@@ -39,7 +39,7 @@ python scripts/download_images.py ./data/train.json ./data/train
 python scripts/create_label.py
 ```
 
-### Create image embedding data using the first half of the model
+### Create image embedding data using VGG19
 
 The pretrained CNN model is very large, making the total training process slow eventhough we freeze the weights of the pre-trained model for transfer learning. As the model weight is not being trained, I decided to extract the output of the pretrained CNN model (VGG19) and store it temportatly and use it as embedding data for input for the fully connective network. This way, it is more than hundreads time faster in training. 
 ```
