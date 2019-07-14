@@ -86,7 +86,7 @@ I have Flask to deploy the deep learning model to a web application. For more in
 docker pull echeng1212/keras_flask_app:insightdemo
 docker run -d -p 5000:5000 echeng1212/keras_flask_app:insightdemo
 ```
-To deploy the containerized web application on google cloud, you should first register a google cloud account, which will give you $300 credit. Open the console, and create an instance with adequate storage. Without creating your own instance, but run the docker container on the default console will get an out of memory error. Then you can run the following code to build the docker on the cloud, note to set the [PROJECT_ID] in your project ID and your zone to your local zone.
+To deploy the containerized web application on google cloud, you should first register a google cloud account, which will give you $300 credit. Open the console, and create an instance with adequate storage. Without creating your own instance, but run the docker container on the default console will get an out of memory error. Then you can run the following code to build the docker on the cloud, note to set the [PROJECT_ID] in your project ID and your zone to your local zone. You should also have kubernetes preinstalled on your instance.
 
 ```
 gcloud config set project [PROJECT_ID]
@@ -99,8 +99,10 @@ export PROJECT_ID="$(gcloud config get-value project -q)"
 docker build -t gcr.io/${PROJECT_ID}keras-flask-deploy-webapp:v1 .
 gcloud auth configure-docker
 docker push gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1
-
 ```
+If you have probelm running 'gcloud auth configure-docker', you can follow this instruction for troubleshooting:
+https://techoverflow.net/2019/04/01/fixing-gcloud-warning-docker-credential-gcloud-not-in-system-path/
+
 You should then check if the docker is running properly by running it locally on the google cloud VM:
 ```
 docker run --rm -p 5000:5000 gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1
