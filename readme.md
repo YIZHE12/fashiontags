@@ -156,11 +156,5 @@ https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app
 * **Yi Zheng** :echeng1212@gmail.com 
 
 
-## Acknowledgments
-
-* Inspiration: 
-https://github.com/KDercksen/hunter2_fashion
-
-
 
 
