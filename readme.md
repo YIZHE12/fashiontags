@@ -45,7 +45,7 @@ The pretrained CNN model is very large, making the total training process slow e
 ```
 python scripts/create_embedding.py
 ```
-### Train the second half of the model using multiple customerized loss functions
+### Train the fully connected layers using multiple customerized loss functions
 
 Traditionally, a multilabel classification problem will use binary cross-entropy as the cost function. However, due to the sparcity of our target data, in other words, most columns in y are 0. The model can just output all zero to get a high accuracy. This makes it very difficult to train. 
 
