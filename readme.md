@@ -101,7 +101,7 @@ gcloud auth configure-docker
 docker push gcr.io/${PROJECT_ID}/keras-flask-deploy-webapp:v1
 ```
 If you have probelm running 'gcloud auth configure-docker', you can follow this instruction for troubleshooting:
-https://techoverflow.net/2019/04/01/fixing-gcloud-warning-docker-credential-gcloud-not-in-system-path/
+https://techoverflow.net/2019/04/01/fixing-gcloud-warning-docker-credential-gcloud-not-in-system-path/. Note that you can also use Docker pull, tag and push for a prebuild docker container instead of building your own one.
 
 You should then check if the docker is running properly by running it locally on the google cloud VM:
 ```
