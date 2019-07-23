@@ -80,7 +80,7 @@ python scripts/train.py
 
 
 
-## Deployment
+## Dockerized Flask web app
 
 I have Flask to deploy the deep learning model to a web application. For more information, please visit [my github page of Flask and Docker](https://github.com/YIZHE12/keras-flask-deploy-webapp). To download and run the docker, you can run the following commands:
 
@@ -88,6 +88,8 @@ I have Flask to deploy the deep learning model to a web application. For more in
 docker pull echeng1212/keras_flask_app:insightdemo
 docker run -d -p 5000:5000 echeng1212/keras_flask_app:insightdemo
 ```
+
+## Deployment on Google Cloud with Kubernetes 
 To deploy the containerized web application on google cloud, you should first register a google cloud account, which will give you $300 credit. Open the console, and create an instance with adequate storage. Without creating your own instance, but run the docker container on the default console will get an out of memory error. Then you can run the following code to build the docker on the cloud, note to set the [PROJECT_ID] in your project ID and your zone to your local zone. You should also have kubernetes preinstalled on your instance.
 
 ```
